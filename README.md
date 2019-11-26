@@ -2,6 +2,7 @@
 
 Learn how you can bind the Tree Grid data from a local data source, a remote data source, and using an external AJAX request.
 
+Watch the video now: https://www.syncfusion.com/tutorial-videos/angular/treegrid?title=binding-self-referential-data-to-an-angular-tree-grid
 
 Documentation: https://ej2.syncfusion.com/angular/documentation/treegrid/data-binding/
 

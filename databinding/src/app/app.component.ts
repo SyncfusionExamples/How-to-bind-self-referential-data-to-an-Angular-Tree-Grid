@@ -3,33 +3,36 @@ import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import { Ajax } from '@syncfusion/ej2-base';
 import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
 import { sampleData } from './datasource';
+import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports:[TreeGridModule, ButtonModule]
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  public data: Object[];
+  public data!: Object[];
 
   //Unblock the following to bind Remote Data
-  //public dataManager: DataManager;
+  public dataManager!: DataManager;
 
   //Unblock the following to bind using AJAX request
-  //@ViewChild('treegrid')
-  //public treegrid: TreeGridComponent;
+  @ViewChild('treegrid')
+  public treegrid!: TreeGridComponent;
 
   ngOnInit(): void {
     this.data = sampleData;
 
     //Unblock the following to bind Remote Data
-    // this.dataManager = new DataManager({
-    //   url:
-    //     'https://ej2services.syncfusion.com/production/web-services/api/SelfReferenceData',
-    //   adaptor: new WebApiAdaptor(),
-    //   crossDomain: true
-    // });
+    this.dataManager = new DataManager({
+      url:
+        'https://ej2services.syncfusion.com/production/web-services/api/SelfReferenceData',
+      adaptor: new WebApiAdaptor(),
+      crossDomain: true
+    });
   }
 
   //Unblock the following to bind using AJAX request
